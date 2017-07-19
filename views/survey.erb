@@ -1,0 +1,39 @@
+<div class="bounceInLeft animated" data-animation="bounce">
+  <div id="name_header" class="card-panel green lighten-2">
+    <h1 id="name" class="white-text center">You Are Viewing '<%= @survey.name %>'</h1>
+  </div>
+</div>
+<div class="fadeIn animated">
+  <div id="name_header" class="card-panel green lighten-2">
+    <a class="btn-floating btn-large waves-effect waves-light green lighten-2 center z-depth-3" data-target="modal1">
+      <i class="material-icons">add</i>
+    </a>
+    <h4 id="name" class="white-text center">Here is a list of questions in the survey</h1>
+    <div class="collection green-text">
+      <% @survey.questions.each do |question| %>
+      <a href="/surveys/<%=@survey.id%>/questions/<%=question.id%>" class="collection-item"><%= question.name%></a>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content green-text">
+    <h4 class="center">Add a  Question</h4>
+    <form action="/surveys/<%=@survey.id%>/questions" method="post">
+      <div>
+        <div class="input-field">
+          <input name="name" id="name" type="text" class="validate">
+          <label for="name">Question Name</label>
+        </div>
+      </div>
+      <div>
+        <div class="input-field">
+          <input name="extras" id="target_audience" type="text" class="validate">
+          <label for="extras">Extra information for the question</label>
+        </div>
+      </div>
+      <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">Add Question</button>
+    </form>
+  </div>
+</div>
