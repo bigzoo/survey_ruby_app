@@ -1,0 +1,15 @@
+<div class="bounceInLeft animated" data-animation="bounce">
+  <div id="name_header" class="card-panel green lighten-2">
+    <h1 id="name" class="white-text center">Welcome to Survey Monkey</h1>
+  </div>
+</div>
+<div class="fadeIn animated">
+  <div id="name_header" class="card-panel green lighten-2">
+    <h4 id="name" class="white-text center">Pick a survey to take from the list.</h1>
+    <div class="collection green-text">
+      <% @surveys.each do |survey| %>
+      <a href="/take/surveys/<%= survey.id%>" class="collection-item"><%= survey.name%></a>
+      <% end %>
+    </div>
+  </div>
+</div>
