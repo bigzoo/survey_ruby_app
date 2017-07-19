@@ -1,0 +1,25 @@
+<div class="container">
+  <form action="/take/surveys/<%=@survey.id%>/answers" method="post">
+      <div class=" card green darken-1">
+        <div class="card-content white-text">
+          <h3 id="name" class="white-text center"> The <%= @survey.name %>.</h3>
+          <div class="row">
+
+          <div class="answer input-field col s6 m12">
+            <input id="author" name="author" type="text" class="validate">
+            <label for="author" class="card-title">Whats Your Name?</label>
+          </div>
+        </div>
+    <% @survey.questions.each do |question|%>
+      <div class="row">
+          <div class="answer input-field col s6 m12">
+          <input id="answers[<%= question.id %>]" name="answers[<%= question.id %>]" type="text" class="validate">
+          <label for="answers[<%= question.id %>]" class="card-title"><%= question.name %></label>
+          </div>
+      </div>
+    <% end %>
+    <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  </form>
+</div>
