@@ -1,0 +1,15 @@
+<div class="bounceInLeft animated" data-animation="bounce">
+  <div id="name_header" class="card-panel green lighten-2">
+    <h4 id="name" class="white-text center">You Are Viewing '<%= @question.name %>' in the '<%= @survey.name%>' Survey.</h4>
+  </div>
+</div>
+<div class="fadeIn animated">
+  <div id="name_header" class="card-panel green lighten-2">
+    <h4 id="name" class="white-text center">Here is a list of answers in the question</h1>
+    <div class="collection green-text">
+      <% @question.answers.each do |answer| %>
+      <a href="/" class="collection-item"><%= answer.name%></a>
+      <% end %>
+    </div>
+  </div>
+</div>
