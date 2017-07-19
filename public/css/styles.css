@@ -1,0 +1,17 @@
+.answer label {
+  color: #fff;
+  /*padding: 20px;*/
+}
+/* label focus color */
+.answer input[type=text]:focus + label {
+  color: #fff;
+}
+
+body, html {
+  background-color: #56E568 !important;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
